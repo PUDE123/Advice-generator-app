@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	padding:0;
+	scroll-behavior: smooth;
+	font-family: 'Manrope', sans-serif;
+	background-color:hsl(218, 23%, 16%);
+}
+
+
+
+/*============== TOGGLE STARTS =============*/
+
+div.toggle-container{
+   position:relative ;
+   width:100%;
+   height:40px;
+   padding:1em;
+}
+#toggle{
+    -webkit-appearance:none;
+    appearance:none;
+    height:40px;
+    width:75px;
+    background-color:#fff;
+    position:absolute ;
+    right:0;
+    border-radius:20px;
+    outline:none;
+    cursor:pointer;
+
+}
+#toggle:after{
+    content:"";
+    position:absolute ;
+    height:30px;
+    width:30px;
+    background-color:transparent;
+     box-shadow: 10px 10px hsl(217, 19%, 24%);
+    top:-4px;
+    left:30px;
+    border-radius:50%;
+     transition: 0.3s all ease-in-out;
+  }
+
+/* light theme */
+
+.light-theme {
+    background-color:#f1f1f1;
+}
+.light-theme div.advice-generator-box{
+  background-color:#f9f9f9;
+}
+.light-theme div.advice-generator-box h2.advice-text{
+	color:hsl(217, 19%, 24%);
+}
+.light-theme div.advice-generator-box p{
+	color:hsl(150, 75%, 66%);
+}
+.light-theme div.attribution{
+	color:hsl(217, 19%, 24%);
+	 background-color:#f5f5f5;
+}
+.light-theme div.attribution a{
+	color:hsl(217, 19%, 24%);
+}
+
+
+.light-theme #toggle{
+    background-color: hsl(217, 19%, 24%) ;
+}
+.light-theme #toggle:after{
+  
+    box-shadow:0px 0px transparent;
+    background-color:#fff;
+    top:4px;
+    left:7px;
+}
+
+
+/*========== ADVICE BOX STARTS ==============*/
+
+div.advice-generator-box{
+	 position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:470px;
+  height:auto;
+  background-color:hsl(217, 19%, 24%);
+  border-radius: 15px;
+  padding:1em 3em;
+}
+div.advice-generator-box p{
+	 text-transform: uppercase;
+	 text-align: center;
+	color:hsl(150, 100%, 66%);
+	font-size: 13px;
+	letter-spacing: 2px;
+
+}
+div.advice-generator-box h2.advice-text{
+	text-align: center;
+	color:hsl(193, 38%, 86%);
+    font-size: 1.4em;
+}
+div.advice-generator-box img.divider{
+	 max-width: 100%;
+	 margin:20px 0;
+}
+div.advice-generator-box button.dice{
+	background-color: hsl(150, 100%, 66%);
+	padding:1em;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width:50px;
+    height:50px;
+    border:none;
+    outline:none;
+    position: absolute;
+  left: 45%;
+    transition: box-shadow 0.3s ease;
+}
+div.advice-generator-box button.dice:hover, div.advice-generator-box button.dice:focus{
+ box-shadow: 0 0 10px 5px hsl(150, 100%, 66%);
+ cursor:pointer;
+}
+div.advice-generator-box button.dice img{
+	width:20px;
+    height:20px;
+}
+
+
+
+/*============ ATTRIBUTION ==================*/
+
+div.attribution{
+	position: fixed;
+	bottom:0;
+	width: 100%;
+	text-align: center;
+	color:#f5f5f5;
+	padding:10px;
+	font-size: 13px;
+	letter-spacing: 2px;
+	 background-color:hsl(217, 19%, 24%);
+	border-top:1px solid rgba(255, 255, 255, 0.3);
+}
+div.attribution a{
+	color:hsl(150, 100%, 66%);
+}
+
+
+
+
+
+/*================= MEDIA QUERIES ==========*/
+
+@media (max-width:510px){
+	div.advice-generator-box{
+  width:400px;
+}
+div.advice-generator-box button.dice{
+  left: 44%;
+}
+	div.attribution{
+	font-size: 10px;
+}
+}
+
+
+@media (max-width:430px){
+	div.advice-generator-box{
+  width:350px;
+}
+div.advice-generator-box button.dice{
+  left: 43%;
+}
+
+}
+
+@media (max-width:380px){
+	div.advice-generator-box{
+  width:300px;
+  padding: 1em 2em;
+}
+div.advice-generator-box button.dice{
+  left: 42%;
+}
+div.advice-generator-box h2.advice-text{
+	text-align: center;
+	color:hsl(193, 38%, 86%);
+    font-size: 1.2em;
+}
+}
+
+@media (max-width:320px){
+	div.advice-generator-box{
+  width:250px;
+}
+div.advice-generator-box button.dice{
+  left: 41%;
+}
+div.advice-generator-box h2.advice-text{
+    font-size: 1em;
+
+}
+}
+

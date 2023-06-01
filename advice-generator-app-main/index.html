@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+
+  <title>Frontend Mentor | Advice generator app</title>
+</head>
+<body>
+ 
+ <!--=========== TOGGLE STARTS ===============---->
+
+ <div class="toggle-container">
+        <input type="checkbox" class="toggle-btn" id="toggle" onclick="toggle()">
+    </div>
+
+ <!--============  ADVICE BOX STARTS ======================-->
+
+ <div class="advice-generator-box">
+
+ <!-- advice number -->
+  <p>Advice #<span id="advice-id">117</span></p>
+
+ <!-- advice text -->
+  <h2 class="advice-text" id="adviceText">
+    "It is easy to sit up and take notice, what's difficult is getting up and taking action."
+  </h2>
+
+
+ <!-- advice divider -->
+ <img src="images/pattern-divider-desktop.svg" class="divider">
+
+
+ <!-- button to generate advice text -->
+ <button class="dice" id="generateText">
+  <img src="images/icon-dice.svg">
+</button>
+
+
+
+</div>
+
+<!--============ ADVICE BOX ENDS ======================-->
+
+
+
+
+
+
+
+<!--============ FOOTER STARTS ======================-->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.linkedin.com/in/uduak-precious-0b7199258/" >Uduak Precious E.</a>
+  </div>
+
+
+
+
+
+
+
+
+<!--============ JAVASCRIPT STARTS======================-->
+  <script>
+
+//Day/Night toggle
+function toggle(){
+    document.body.classList.toggle("light-theme");
+}
+
+
+//Advice slip API 
+
+const adviceText = document.getElementById("adviceText");
+const adviceNumber = document.getElementById("advice-id");
+const generateText = document.getElementById("generateText");
+
+//fetch new advice, update the advice container and advie number
+function fetchNewAdvice() {
+  fetch("https://api.adviceslip.com/advice")
+    .then(response => response.json())
+    .then(data => {
+      const advice = data.slip.advice;
+      const randomNumber = Math.floor(Math.random() * 200) + 1; // Generate a random number between 1 and 200
+      adviceText.textContent = advice;
+      adviceNumber.textContent = randomNumber;
+    })
+    .catch(error => {
+      console.log("Error fetching advice:", error);
+    });
+}
+
+// button click event listener
+generateText.addEventListener("click", fetchNewAdvice);
+
+  </script>
+
+</body>
+</html>
