@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop View](https://github.com/PUDE123/Client-side-validation-signup-form-/blob/main/intro-component-with-signup-form-master/design/desktop-view.PNG)
-![Mobile View](https://github.com/PUDE123/Client-side-validation-signup-form-/blob/main/intro-component-with-signup-form-master/design/mobile-view.png)
+![Desktop View](https://github.com/PUDE123/Advice-generator-app/blob/main/advice-generator-app-main/design/desktop-design.png)
+![Mobile View](https://github.com/PUDE123/Advice-generator-app/blob/main/advice-generator-app-main/design/mobile-design.png)
 
 
 ### Links
